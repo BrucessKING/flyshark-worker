@@ -1,0 +1,9 @@
+server:
+  port: 8888
+  max-http-header-size: 102400
+spring:
+  profiles:
+    active: mqproducer, expression, service, flysharkredis
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
